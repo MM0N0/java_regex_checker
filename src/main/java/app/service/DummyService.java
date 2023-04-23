@@ -1,14 +1,13 @@
 package app.service;
 
-import app.App;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class YamlService extends Service{
+public class DummyService extends Service{
 
-    static Logger logger = LogManager.getLogger(YamlService.class);
+    static Logger logger = LogManager.getLogger(DummyService.class);
 
-    public YamlService() {
+    public DummyService() {
 
     }
 

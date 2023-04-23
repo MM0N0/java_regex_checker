@@ -1,6 +1,5 @@
-package app;
+package app.service;
 
-import app.service.Service;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -21,7 +20,7 @@ public class ServiceManager {
         return requestedService;
     }
 
-    protected static void initServices(List<Class<? extends Service>> servicesToInit) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+    public static void initServices(List<Class<? extends Service>> servicesToInit) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
         services = new HashMap<>();
         for (Class<? extends Service> serviceClass : servicesToInit) {
             addService(serviceClass);
@@ -34,7 +33,7 @@ public class ServiceManager {
         services.put(serviceClass, p);
     }
 
-    protected static void deconstructServices() {
+    public static void deconstructServices() {
         logger.debug("start deconstruction.");
         services.keySet().forEach(serviceClass ->
                 ((Service) services.get(serviceClass)).deconstruct());
