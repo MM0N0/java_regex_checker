@@ -69,7 +69,7 @@
           </descriptorRefs>
           <archive>
             <manifest>
-              <mainClass>com.dev.java.App</mainClass>
+              <mainClass>app.App</mainClass>
             </manifest>
           </archive>
         </configuration>
