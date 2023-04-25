@@ -29,7 +29,7 @@ public class App {
         }
 
         try {
-            new CommandLine(new RootCommand()).execute(args);
+            new CommandLine(new RegexCheckerCommand()).execute(args);
         } catch (Exception e) {
             logger.error("Command failed", e);
             System.exit(1);

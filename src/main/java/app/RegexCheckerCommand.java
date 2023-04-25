@@ -18,8 +18,8 @@ import java.util.stream.Collectors;
 @CommandLine.Command(name = "java-regex-checker", description = "TODO",
         subcommands = {}
         , version = "dev 0.1", mixinStandardHelpOptions = true)
-class RootCommand implements Runnable {
-    static Logger logger = LogManager.getLogger(RootCommand.class);
+class RegexCheckerCommand implements Runnable {
+    static Logger logger = LogManager.getLogger(RegexCheckerCommand.class);
 
     @CommandLine.Option(names = {"-v", "--verbose"}, description = "TODO")
     boolean verbose;
@@ -147,7 +147,5 @@ class RootCommand implements Runnable {
         System.out.println("notMatchedExamples:");
         notMatchedExamples.forEach(System.out::println);
         System.out.println();
-
-        // Documentation: https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html
     }
 }

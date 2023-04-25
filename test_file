@@ -4,6 +4,7 @@
 
 // ^[a-z0-9]+_.*$sad//
 // asdsad
+// Documentation: https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html
 //
 
 123a1z23312_asdasd
