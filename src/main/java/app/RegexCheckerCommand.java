@@ -24,11 +24,40 @@ class RegexCheckerCommand implements Runnable {
     @CommandLine.Option(names = {"-v", "--verbose"}, description = "TODO")
     boolean verbose;
 
+    @CommandLine.Option(names = {"-l", "--loop"})
+    boolean loop;
+
+    @CommandLine.Option(names = {"-m", "--millis"}, defaultValue = "500")
+    String millis;
+
     @CommandLine.Parameters(description = "TODO")
     Path path;
 
     @Override
     public void run() {
+        if(loop) {
+            int waitTime;
+            try {
+                waitTime = Integer.parseInt(millis);
+            } catch (NumberFormatException e) {
+                logger.error("Error while parsing --millis", e);
+                return;
+            }
+            while(true) {
+                check_regex();
+                try {
+                    Thread.sleep(waitTime);
+                } catch (InterruptedException e) {
+                    logger.error("Error while waiting", e);
+                    return;
+                }
+            }
+        } else {
+            check_regex();
+        }
+    }
+
+    private void check_regex() {
         // read file or die trying
         List<String> contentLines;
         //
