@@ -61,5 +61,3 @@ In the output you can see which match and which don't match.
 use <code>--loop</code>  to repeat the execution in a loop, while waiting 500ms.
 
 You can specify the delay in <code>--millis</code>.
-
-TODO: Add CI
