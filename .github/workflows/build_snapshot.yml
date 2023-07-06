@@ -1,0 +1,25 @@
+name: Build Snapshot Version
+on:
+  push:
+    branches:
+      - dev
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 18
+        uses: actions/setup-java@v3
+        with:
+          java-version: '18'
+          distribution: 'temurin'
+          settings-path: ${{ github.workspace }}
+
+      - name: Build with Gradle
+        run: gradle jar
+
+      - name: Deploy Build Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: java_regex_checker - Snapshot
+          path: build/libs/*.jar

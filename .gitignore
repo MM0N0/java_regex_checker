@@ -2,3 +2,10 @@
 .idea/
 
 target/
+/gradlew
+/gradlew.bat
+build/
+.gradle/
+gradle/
+.idea/
+/toolchains.xml
