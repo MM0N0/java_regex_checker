@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 class RegexCheckerCommand implements Runnable {
     static Logger logger = LogManager.getLogger(RegexCheckerCommand.class);
 
-    @CommandLine.Option(names = {"-v", "--verbose"}, description = "TODO")
+    @CommandLine.Option(names = {"-v", "--verbose"}, description = "verbosity")
     boolean verbose;
 
     @CommandLine.Option(names = {"-l", "--loop"})
@@ -30,7 +30,7 @@ class RegexCheckerCommand implements Runnable {
     @CommandLine.Option(names = {"-m", "--millis"}, defaultValue = "500")
     String millis;
 
-    @CommandLine.Parameters(description = "TODO")
+    @CommandLine.Parameters(description = "path to the file to process")
     Path path;
 
     @Override
